@@ -47,7 +47,7 @@ exports.Login = async (req, res) => {
     if (!isMatch)
       return res
         .status(400)
-        .json({ success: false, message: "Invalid credentials" });
+        .json({ success: false, message: "Invalid credentials?" });
 
     // FIXED: Changed from JWT_SECRET_KEY to JWT_SECRET
     // Also fixed the payload to match middleware (id instead of userId)
