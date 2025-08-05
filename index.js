@@ -1,5 +1,5 @@
 // Load environment variables FIRST - before anything else
-require('dotenv').config();
+require("dotenv").config();
 
 const express = require("express");
 const colors = require("colors");
@@ -20,10 +20,7 @@ const app = express();
 // CORS configuration
 app.use(
   cors({
-    origin: [
-      "https://money-frontend-bice.vercel.app",
-      "http://localhost:5173"
-    ],
+    origin: ["https://money-frontend-bice.vercel.app", "http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
   })
@@ -37,8 +34,8 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/transactions', require('./routes/transactionRoutes'));
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/transactions", require("./routes/transactionRoutes"));
 
 // Root route
 app.get("/", (req, res) => {
