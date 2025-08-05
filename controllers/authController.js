@@ -52,7 +52,7 @@ exports.Login = async (req, res) => {
     // FIXED: Changed from JWT_SECRET_KEY to JWT_SECRET
     // Also fixed the payload to match middleware (id instead of userId)
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1m",
+      expiresIn: "30d",
     });
 
     res.status(200).json({
